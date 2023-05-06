@@ -1,0 +1,53 @@
+@import "./ol.css";
+
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+#map {
+  position: relative;
+  height: 500px;
+  margin-right: 400px;
+  margin-left: 400px;
+}
+
+#headerMenu {
+  position: relative;
+  top: 0;
+  height: 50px;
+  margin-right: 400px;
+  margin-left: 400px;
+  background-color: rgb(41, 41, 41);
+  vertical-align: middle;
+  padding: 5px;
+}
+
+#typeSelect {
+  width: 200px;
+}
+
+#hazardSelect {
+  width: 200px;
+}
+
+#insert {
+  width: 75px;
+}
+
+#insertHazard {
+  width: 75px;
+}
+
+@media only screen and (max-width: 1400px) {
+  #map, #headerMenu {
+      margin-left: 50px;
+      margin-right: 50px;
+  }
+
+  h1 {
+      margin-left: 100px;
+      margin-right: 100px;
+  }
+
+}

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Übersicht</title>
+    <link rel="stylesheet" href="map/bootstrap.min.css">
+    <link rel="stylesheet" href="map/style.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -25,6 +27,38 @@
                 <p class="normal">Im Einsatz ist es oft schwierig den Überblick zu behalten. Das liegt unter anderm daran, dass viele Details von dem Einsatz nicht in Echtzeit verfügbar sind. Auch Effizienz und Erfolg des Einsatzes sind von aktuellen Informationen abhängig. Wenn den Einsatzteilnehmern die aktuelle Lagesituation immer bekannt wäre, könnte dem entgegengewirkt werden. Aktuell gibt es jedoch nur wenige Möglichkeiten ein Lagebild in Echtzeit zu erstellen, teilen und aktualisieren. Doch es gibt bereits Lösungen! Die NATO arbeitet längst mit dem Konzept Common Operational Pictures (COP). BOSCOP will genau dieses Konzept nutzen. Denn damit sind Überblick, Effizienz und Erfolg des Einsatzes gesichert.</p>
             </section>
         </article>
+        <div id="headerMenu" class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group me-2" role="group" aria-label="Button group with nested dropdown">            
+              <div class="input-group">
+                <label class="input-group-text" for="typeSelect">Area Type:</label>
+                <select class="form-select" id="typeSelect">
+                  <option value="flooded-area">Flooded Area</option>
+                  <option value="Square">Brand</option>
+                  <option value="Box">Brand Fortwickelnd</option>
+                  <option value="Star">ABC</option>
+                  <option value="None">None</option>
+                </select>
+                <input class="form-control" type="button" value="Insert" id="insert">
+              </div>
+            </div>
+            <div class="btn-group me-2" role="group" aria-label="Button group with nested dropdown">        
+              <div class="input-group">
+                <label class="input-group-text" for="hazardSelect">Hazard Type:</label>
+                <select class="form-select" id="hazardSelect">
+                  <option value="hazard-acute">Gefahr Akute</option>
+                  <option value="Square">Brand</option>
+                  <option value="Box">Brand Fortwickelnd</option>
+                  <option value="Star">ABC</option>
+                  <option value="None">None</option>
+                </select>
+                <input class="form-control" type="button" value="Insert" id="insertHazard">
+              </div>
+            </div>
+          </div>
+        <div id="map"></div>
     </main>
+
+    <script src="map/ol.js"></script>
+    <script src="map/main.js"></script>
 </body>
 </html>
