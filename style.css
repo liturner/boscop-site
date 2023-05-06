@@ -3,39 +3,39 @@
     padding: 0;
 }
 
-html{
+html {
     height: 100;
 }
 
-body{
+body {
     text-align: left;
     font: normal normal 300 25px/31px Calibri;
     letter-spacing: 0px;
     color: #000000;
     opacity: 1;
+    
 }
 
-.normal{
+.normal {
     margin-left: 400px;
     margin-right: 400px;
     margin-bottom: 50px;
 }
 
-h1{
+h1 {
     margin-left: 600px;
     margin-right: 600px;
     margin-top: 70px;
     margin-bottom: 30px;
     text-align: center;
     line-height: 110%;
-    text-align: center;
     font: normal normal normal 50px/55px Calibri;
     letter-spacing: 0px;
     color: #000000;
     opacity: 1;
 }
 
-h2{
+h2 {
     margin-left: 400px;
     margin-right: 400px;
     margin-bottom: 15px;
@@ -46,7 +46,7 @@ h2{
     opacity: 1;
 }
 
-nav{
+nav {
     height: 80px;
     width: 100%;
     background-color: white;
@@ -54,31 +54,31 @@ nav{
     position: relative;
 }
 
-nav ul{
+nav ul {
     float: right;
 }
 
-nav li{
+nav li {
     display: inline-block;
     margin-top: 30px;
     margin-right: 40px;
     text-align: center;
 }
 
-nav li a{
+nav li a {
     font-family: Calibri;
     font-size: 30px;
     color: #000000;
     text-decoration: none;
 }
 
-nav ul li .active{
+nav ul li .active {
     color: #007ACB;
     font-weight: bold;
     text-decoration: underline;
 }
 
-nav img{
+nav img {
     height: 45px;
     position: absolute;
     transform: translate(0%, -50%);
@@ -86,7 +86,7 @@ nav img{
     top: 50%;
 }
 
-.error-img{
+.error-img {
     height: 15px;
     
     transform: translate(5%, 12%);
@@ -94,7 +94,7 @@ nav img{
  
 }
 
-label{
+label {
     text-align: left;
     font: normal normal normal 16px/24px Calibri;
     letter-spacing: 0px;
@@ -102,20 +102,20 @@ label{
     opacity: 1;
 }
 
-.contact-box{
+.contact-box {
     width: 500px;
     margin-top: 100px;
-    top: 50%;
+    top: 450px;
     left: 50%;
     transform: translate(-50%, -50%);
     position: absolute;
 }
 
-form{
+form {
     margin: 35px;
 }
 
-.input-field{
+.input-field {
     width: 400px;
     height: 40px;
     margin-bottom: 10px;
@@ -127,13 +127,13 @@ form{
     font: normal normal 300 20px/25px Calibri;
 }
 
-.textarea-field{
+.textarea-field {
     height: 100px;
     padding-top: 10px;
     font: normal normal 300 20px/25px Calibri;
 }
 
-.btn{
+.btn {
     width: 422px;
     border-radius: 4px;
     color: #ffffff;
@@ -146,14 +146,14 @@ form{
     cursor: pointer;   
 }
 
-.small{
+.small {
 width: 400px;
 text-align: left;
 margin: auto;
 margin-left: 40px;
 }
 
-.hint{
+.hint {
     text-align: left;
     font: normal normal 300 15px/15px Calibri;
     letter-spacing: 0px;
@@ -164,13 +164,13 @@ margin-left: 40px;
     margin-top: 7px;
 }
 
-.invalid{
+.invalid {
     color: red;
     font: normal normal 300 16px/25px Calibri;
     margin-left: 5px;
 }
 
-.invalidform{
+.invalidform {
     width: 396px;
     height: 40px;
     margin-bottom: 10px;
@@ -188,11 +188,11 @@ input:focus {
     border-color: #000000;
   }
 
-textarea:focus{
+textarea:focus {
     border-color: #000000;
 }
 
-.line{
+.line {
     border-left: 4px solid red;
     height: 112px;
     
@@ -200,4 +200,17 @@ textarea:focus{
     margin-left: -4px;
     margin-right: 5px;
     top: 60px;
+}
+
+@media only screen and (max-width: 1400px) {
+    .normal, h2 {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    h1 {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+
 }
