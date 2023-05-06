@@ -3,11 +3,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Kontakt</title>
     <link rel="stylesheet" href="style.css">
-    
 </head>
 <body>
+    <a href="#main-content" class="visually-hidden">Zum Seiteninhalt springen</a>
     <nav>
         <a href="uebersicht.html"><img src="tt-logo.png" alt="Turnertech Logo"></a>
         <ul>
@@ -17,30 +18,33 @@
             <li><a class="active" href="kontakt.html">Kontakt</a></li>
         </ul>
     </nav>
-    <h1>Kontakt</h1>
+    <main id="main-content">
+        <h1>Kontakt</h1>
     
-    <div class="contact-box">
-        <p class="small">Du hast Fragen zur Software? Lass uns dir helfen. Schicke eine Nachricht mit unserem Kontaktformular an uns.</p>
-        <p class="hint">Alle mit * markierten Felder sind Pflichtfelder.</p>
-        <form id="contact-form">
-            <label for="name">Name*</label>
-            <input aria-label="Name" type="text" class="input-field" placeholder="Dein Name" name="name" id="name">
-            <div id="mail-div">
-                <label id="mail-label" for="mail">E-Mail Adresse*</label>
-                <br>
-                <img src="Error.png" alt="Error" id="error-img" class="error-img" style="display: none;">
-                <span id="text"></span>
-                <input aria-label="E-Mail Adresse" type="email" class="input-field" placeholder="E-Mail Adresse" name="mail" id="mail">
-            </div>     
-            <label for="Betreff">Betreff*
-                <input aria-label="Betreff" type="text" class="input-field" placeholder="Betreff" name="betreff" id="betreff">
-            </label>
-            <label for="Nachricht">Deine Nachricht*
-                <textarea aria-label="Deine Nachricht" class="input-field textarea-field" placeholder="Deine Nachricht" name="nachricht" id="nachricht" cols="30" rows="10"></textarea>
-            </label>
-            <button onclick="validate()" type="button" class="btn">Nachricht abschicken</button>
-        </form>
-    </div>
+        <div class="contact-box">
+            <p class="small">Du hast Fragen zur Software? Lass uns dir helfen. Schicke eine Nachricht mit unserem Kontaktformular an uns.</p>
+            <p class="hint">Alle mit * markierten Felder sind Pflichtfelder.</p>
+            <form id="contact-form">
+                <label for="name">Name*</label>
+                <input aria-label="Name" type="text" class="input-field" placeholder="Dein Name" name="name" id="name">
+                <div id="mail-div">
+                    <label id="mail-label" for="mail">E-Mail Adresse*</label>
+                    <br>
+                    <img src="Error.png" alt="Error" id="error-img" class="error-img" style="display: none;">
+                    <span id="text"></span>
+                    <input aria-label="E-Mail Adresse" type="email" class="input-field" placeholder="E-Mail Adresse" name="mail" id="mail">
+                </div>     
+                <label for="Betreff">Betreff*
+                    <input aria-label="Betreff" type="text" class="input-field" placeholder="Betreff" name="betreff" id="betreff">
+                </label>
+                <label for="Nachricht">Deine Nachricht*
+                    <textarea aria-label="Deine Nachricht" class="input-field textarea-field" placeholder="Deine Nachricht" name="nachricht" id="nachricht" cols="30" rows="10"></textarea>
+                </label>
+                <button onclick="validate()" type="button" class="btn">Nachricht abschicken</button>
+            </form>
+        </div>
+    </main>
+    
 
     <script>
         function validate()
