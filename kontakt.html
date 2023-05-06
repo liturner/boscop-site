@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <nav>
+        <a href="uebersicht.html"><img src="tt-logo.png" alt="Turnertech Logo"></a>
+        <ul>
+            <li><a href="uebersicht.html">Übersicht</a></li>
+            <li><a href="funktionen.html">Funktionen</a></li>
+            <li><a href="benefits.html">Benefits</a></li>
+            <li><a class="active" href="kontakt.html">Kontakt</a></li>
+        </ul>
+    </nav>
+    <h1>Kontakt</h1>
+    
+    <div class="contact-box">
+        <p class="small">Du hast Fragen zur Software? Lass uns dir helfen. Schicke eine Nachricht mit unserem Kontaktformular an uns.</p>
+        <p class="hint">Alle mit * markierten Felder sind Pflichtfelder.</p>
+        <form id="contact-form">
+            <label for="name">Name*</label>
+            <input aria-label="Name" type="text" class="input-field" placeholder="Dein Name" name="name" id="name">
+            <div id="mail-div">
+                <label id="mail-label" for="mail">E-Mail Adresse*</label>
+                <br>
+                <img src="Error.png" alt="Error" id="error-img" class="error-img" style="display: none;">
+                <span id="text"></span>
+                <input aria-label="E-Mail Adresse" type="email" class="input-field" placeholder="E-Mail Adresse" name="mail" id="mail">
+            </div>     
+            <label for="Betreff">Betreff*
+                <input aria-label="Betreff" type="text" class="input-field" placeholder="Betreff" name="betreff" id="betreff">
+            </label>
+            <label for="Nachricht">Deine Nachricht*
+                <textarea aria-label="Deine Nachricht" class="input-field textarea-field" placeholder="Deine Nachricht" name="nachricht" id="nachricht" cols="30" rows="10"></textarea>
+            </label>
+            <button onclick="validate()" type="button" class="btn">Nachricht abschicken</button>
+        </form>
+    </div>
+
+    <script>
+        function validate()
+        {
+            var mail = document.getElementById("mail").value;
+            var regx = /^([a-zA-Z0-9\._]+)@([a-zA-a-zA-Z0-9])+.([a-z]+)(.[a-z]+)?$/
+            var text = document.getElementById("text")
+    
+                if(mail.match(regx)){
+                    alert("Ihre Nachricht wurde erfolgreich versandt.");                  
+                }
+                else {
+                    document.getElementById("error-img").style.display = "inline";                 
+                    text.innerHTML = "Deine E-Mail Adresse ist invalide.";
+                    text.classList.add("invalid");
+                    document.getElementById("mail-label").classList.add("invalid");
+                    document.getElementById("mail-div").classList.add("line");
+                    document.getElementById("mail").classList.remove("input-filed");
+                    document.getElementById("mail").classList.add("invalidform");
+                }
+        }
+    </script>
+
+</body>
+</html>
