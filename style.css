@@ -104,10 +104,21 @@ nav img {
 
 .error-img {
     height: 15px;
-    
     transform: translate(5%, 12%);
     margin-left: 5px;
- 
+}
+
+.contact-text {
+    margin-left: 0px;
+    margin-right: 50px;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    text-align: center;
+    line-height: 110%;
+    font: normal normal normal 50px/55px Calibri;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
 }
 
 label {
@@ -120,8 +131,7 @@ label {
 
 .contact-box {
     width: 500px;
-    margin-top: 100px;
-    top: 450px;
+    top: 400px;
     left: 50%;
     transform: translate(-50%, -50%);
     position: absolute;
@@ -165,8 +175,6 @@ form {
 .small {
 width: 400px;
 text-align: left;
-margin: auto;
-margin-left: 40px;
 }
 
 .hint {
@@ -175,9 +183,8 @@ margin-left: 40px;
     letter-spacing: 0px;
     color: #000000;
     opacity: 1;
-    margin: auto;
-    margin-left: 40px;
     margin-top: 7px;
+    margin-bottom: 10px;
 }
 
 .invalid {
@@ -200,6 +207,20 @@ margin-left: 40px;
     font: normal normal 300 20px/25px Calibri;
 }
 
+.invalidtextarea {
+    width: 396px;
+    height: 100px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 5px;
+    border: 1px solid;
+    border-color: red;
+    border-radius: 5px;
+    outline: none;
+    font: normal normal 300 20px/25px Calibri;
+}
+
 input:focus {
     border-color: #000000;
   }
@@ -211,7 +232,15 @@ textarea:focus {
 .line {
     border-left: 4px solid red;
     height: 112px;
-    
+    left: 50%;
+    margin-left: -4px;
+    margin-right: 5px;
+    top: 60px;
+}
+
+.linetextarea{
+    border-left: 4px solid red;
+    height: 182px;
     left: 50%;
     margin-left: -4px;
     margin-right: 5px;

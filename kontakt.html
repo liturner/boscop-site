@@ -19,45 +19,56 @@
         </ul>
     </nav>
     <main id="main-content">
-        <h1>Kontakt</h1>
-    
-        <div class="contact-box">
-            <p class="small">Du hast Fragen zur Software? Lass uns dir helfen. Schicke eine Nachricht mit unserem Kontaktformular an uns.</p>
-            <p class="hint">Alle mit * markierten Felder sind Pflichtfelder.</p>
-            <form id="contact-form">
-                <label for="name">Name*</label>
-                <input aria-label="Name" type="text" class="input-field" placeholder="Dein Name" name="name" id="name">
+            <form class="contact-box" id="contact-form">
+                <h1 class="contact-text">Kontakt</h1>
+                <p class="small">Du hast Fragen zur Software? Lass uns dir helfen. Schicke eine Nachricht mit unserem Kontaktformular an uns.</p>
+                <p class="hint">Alle mit * markierten Felder sind Pflichtfelder.</p>
+                <div id="name-div">
+                    <label id="name-label" for="name">Name*</label>
+                    <br>
+                    <img src="Error.png" alt="Error" id="error-img4" class="error-img" style="display: none;">
+                    <span id="name-error-text"></span>
+                    <input aria-label="Name" type="text" class="input-field" placeholder="Dein Name" name="name" id="name">
+                </div>
                 <div id="mail-div">
                     <label id="mail-label" for="mail">E-Mail Adresse*</label>
                     <br>
-                    <img src="Error.png" alt="Error" id="error-img" class="error-img" style="display: none;">
-                    <span id="text"></span>
+                    <img src="Error.png" alt="Error" id="error-img1" class="error-img" style="display: none;">
+                    <span id="mail-error-text"></span>
                     <input aria-label="E-Mail Adresse" type="email" class="input-field" placeholder="E-Mail Adresse" name="mail" id="mail">
-                </div>     
-                <label for="Betreff">Betreff*
+                </div>
+                <div id="betreff-div">
+                    <label id="betreff-label" for="betreff">Betreff*</label>
+                    <br>
+                    <img src="Error.png" alt="Error" id="error-img3" class="error-img" style="display: none;">
+                    <span id="betreff-error-text"></span>
                     <input aria-label="Betreff" type="text" class="input-field" placeholder="Betreff" name="betreff" id="betreff">
-                </label>
-                <label for="Nachricht">Deine Nachricht*
+                </div>     
+                <div id="message-div">
+                    <label id="message-label" for="nachricht">Deine Nachricht*</label>
+                    <br>
+                    <img src="Error.png" alt="Error" id="error-img2" class="error-img" style="display: none;">
+                    <span id="message-error-text"></span>
                     <textarea aria-label="Deine Nachricht" class="input-field textarea-field" placeholder="Deine Nachricht" name="nachricht" id="nachricht" cols="30" rows="10"></textarea>
-                </label>
-                <button onclick="validate()" type="button" class="btn">Nachricht abschicken</button>
+                </div>
+                <button onclick="validateMail(), validateMessage(), validateBetreff(), validateName()" type="button" class="btn">Nachricht abschicken</button>
             </form>
-        </div>
+        
     </main>
     
 
     <script>
-        function validate()
+        function validateMail()
         {
             var mail = document.getElementById("mail").value;
             var regx = /^([a-zA-Z0-9\._]+)@([a-zA-a-zA-Z0-9])+.([a-z]+)(.[a-z]+)?$/
-            var text = document.getElementById("text")
+            var text = document.getElementById("mail-error-text");
     
                 if(mail.match(regx)){
-                    alert("Ihre Nachricht wurde erfolgreich versandt.");                  
+                    alert("Deine Nachricht wurde erfolgreich versandt.")
                 }
                 else {
-                    document.getElementById("error-img").style.display = "inline";                 
+                    document.getElementById("error-img1").style.display = "inline";                 
                     text.innerHTML = "Ups, etwas stimmt mit deiner E-Mail Adresse nicht.";
                     text.classList.add("invalid");
                     document.getElementById("mail-label").classList.add("invalid");
@@ -65,6 +76,48 @@
                     document.getElementById("mail").classList.remove("input-filed");
                     document.getElementById("mail").classList.add("invalidform");
                 }
+        }
+
+        function validateMessage() {
+            var message = document.getElementById("nachricht").value;
+            var text = document.getElementById("message-error-text");
+            if(message == "" || message == null){
+                document.getElementById("error-img2").style.display = "inline";                 
+                    text.innerHTML = "Bitte befülle das Textfeld mit deiner Nachricht.";
+                    text.classList.add("invalid");
+                    document.getElementById("message-label").classList.add("invalid");
+                    document.getElementById("message-div").classList.add("linetextarea");
+                    document.getElementById("nachricht").classList.remove("textarea-filed");
+                    document.getElementById("nachricht").classList.add("invalidtextarea");
+            }
+        }
+
+        function validateBetreff() {
+            var betreff = document.getElementById("betreff").value;
+            var text = document.getElementById("betreff-error-text");
+            if(betreff == "" || betreff == null){
+                document.getElementById("error-img3").style.display = "inline";                 
+                    text.innerHTML = "Bitte gib einen Betreff an.";
+                    text.classList.add("invalid");
+                    document.getElementById("betreff-label").classList.add("invalid");
+                    document.getElementById("betreff-div").classList.add("line");
+                    document.getElementById("betreff").classList.remove("input-filed");
+                    document.getElementById("betreff").classList.add("invalidform");
+            }
+        }
+
+        function validateName() {
+            var name = document.getElementById("name").value;
+            var text = document.getElementById("name-error-text");
+            if(name == "" || name == null){
+                document.getElementById("error-img4").style.display = "inline";                 
+                    text.innerHTML = "Bitte gib deinen Namen an.";
+                    text.classList.add("invalid");
+                    document.getElementById("name-label").classList.add("invalid");
+                    document.getElementById("name-div").classList.add("line");
+                    document.getElementById("name").classList.remove("input-filed");
+                    document.getElementById("name").classList.add("invalidform");
+            }
         }
     </script>
 
