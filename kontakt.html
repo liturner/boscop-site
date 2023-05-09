@@ -19,7 +19,8 @@
         </ul>
     </nav>
     <main id="main-content">
-            <form class="contact-box" id="contact-form">
+        <div class="contact-box">
+            <form id="contact-form">
                 <h1 class="contact-text">Kontakt</h1>
                 <p class="small">Du hast Fragen zur Software? Lass uns dir helfen. Schicke eine Nachricht mit unserem Kontaktformular an uns.</p>
                 <p class="hint">Alle mit * markierten Felder sind Pflichtfelder.</p>
@@ -53,9 +54,9 @@
                 </div>
                 <button onclick="validateMail(), validateMessage(), validateBetreff(), validateName()" type="button" class="btn">Nachricht abschicken</button>
             </form>
-        
+        </div>
     </main>
-    
+    <footer>No rights reserved · turnertech@outlook.com</footer>
 
     <script>
         function validateMail()
@@ -120,6 +121,5 @@
             }
         }
     </script>
-
 </body>
 </html>
