@@ -9,8 +9,8 @@
 </head>
 <body>
     <a href="#main-content" class="visually-hidden">Zum Seiteninhalt springen</a>
-    <nav>
-        <a href="uebersicht.html"><img src="tt-logo.png" alt="Turnertech Logo"></a>
+    <nav aria-label="Hauptnavigation">
+        <a aria-label="Zurück zur Übersicht" href="uebersicht.html"><img src="tt-logo.png" alt="Turnertech Logo"></a>
         <ul>
             <li><a href="uebersicht.html">Übersicht</a></li>
             <li><a href="funktionen.html">Funktionen</a></li>
@@ -19,7 +19,7 @@
         </ul>
     </nav>
     <main id="main-content">
-        <div class="contact-box">
+        <div class="contact-box" role="form">
             <form id="contact-form">
                 <h1 class="contact-text">Kontakt</h1>
                 <p class="small">Du hast Fragen zur Software? Lass uns dir helfen. Schicke eine Nachricht mit unserem Kontaktformular an uns.</p>
@@ -29,30 +29,30 @@
                     <br>
                     <img src="Error.png" alt="Error" id="error-img4" class="error-img" style="display: none;">
                     <span id="name-error-text"></span>
-                    <input aria-label="Name" type="text" class="input-field" placeholder="Dein Name" name="name" id="name">
+                    <input type="text" class="input-field" placeholder="Dein Name" name="name" id="name">
                 </div>
                 <div id="mail-div">
                     <label id="mail-label" for="mail">E-Mail Adresse*</label>
                     <br>
                     <img src="Error.png" alt="Error" id="error-img1" class="error-img" style="display: none;">
                     <span id="mail-error-text"></span>
-                    <input aria-label="E-Mail Adresse" type="email" class="input-field" placeholder="E-Mail Adresse" name="mail" id="mail">
+                    <input role="input" type="email" class="input-field" placeholder="E-Mail Adresse" name="mail" id="mail">
                 </div>
                 <div id="betreff-div">
                     <label id="betreff-label" for="betreff">Betreff*</label>
                     <br>
                     <img src="Error.png" alt="Error" id="error-img3" class="error-img" style="display: none;">
                     <span id="betreff-error-text"></span>
-                    <input aria-label="Betreff" type="text" class="input-field" placeholder="Betreff" name="betreff" id="betreff">
+                    <input type="text" class="input-field" placeholder="Betreff" name="betreff" id="betreff">
                 </div>     
                 <div id="message-div">
                     <label id="message-label" for="nachricht">Deine Nachricht*</label>
                     <br>
                     <img src="Error.png" alt="Error" id="error-img2" class="error-img" style="display: none;">
                     <span id="message-error-text"></span>
-                    <textarea aria-label="Deine Nachricht" class="input-field textarea-field" placeholder="Deine Nachricht" name="nachricht" id="nachricht" cols="30" rows="10"></textarea>
+                    <textarea class="input-field textarea-field" placeholder="Deine Nachricht" name="nachricht" id="nachricht" cols="30" rows="10"></textarea>
                 </div>
-                <button onclick="validateMail(), validateMessage(), validateBetreff(), validateName()" type="button" class="btn">Nachricht abschicken</button>
+                <button onclick="validateMail(), validateMessage(), validateBetreff(), validateName()" type="button" class="btn" role="buttonspr" >Nachricht abschicken</button>
             </form>
         </div>
     </main>
@@ -66,7 +66,7 @@
             var text = document.getElementById("mail-error-text");
     
                 if(mail.match(regx)){
-                    alert("Deine Nachricht wurde erfolgreich versandt.")
+                    
                 }
                 else {
                     document.getElementById("error-img1").style.display = "inline";                 

@@ -7,6 +7,18 @@ html {
     height: 100;
 }
 
+.errormessage {
+    visibility: hidden;
+  }
+  
+  [aria-invalid="true"] {
+    outline: 2px solid red;
+  }
+  
+  [aria-invalid="true"] ~ .errormessage {
+    visibility: visible;
+  }
+
 body {
     text-align: left;
     font: normal normal 300 25px/31px Calibri;
@@ -113,7 +125,6 @@ nav img {
 .contact-text {
     margin-left: 50px;
     margin-right: 50px;
-
     margin-bottom: 30px;
     text-align: center;
     line-height: 110%;
