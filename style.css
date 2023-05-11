@@ -33,9 +33,9 @@ body {
     opacity: 0;
 }
 .visually-hidden:focus {
-    left: 50%;
-  transform: translateX(-50%);
-  opacity: 1;
+    left: 8%;
+    transform: translateX(-50%);
+    opacity: 1;
 }
 
 .normal {
