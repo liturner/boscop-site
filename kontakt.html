@@ -10,8 +10,8 @@
 <body>
     <a href="#main-content" class="visually-hidden">Zum Seiteninhalt springen</a>
     <nav aria-label="Hauptnavigation">
-        <a aria-label="Zurück zur Übersicht" href="uebersicht.html"><img src="tt-logo.png" alt="Turnertech Logo"></a>
         <ul>
+            <li><a aria-label="Zurück zur Übersicht" href="uebersicht.html"><img src="tt-logo.png" alt="Turnertech Logo"></a></li>
             <li><a href="uebersicht.html">Übersicht</a></li>
             <li><a href="funktionen.html">Funktionen</a></li>
             <li><a href="benefits.html">Benefits</a></li>
@@ -24,39 +24,27 @@
                 <h1 class="contact-text">Kontakt</h1>
                 <p class="small">Du hast Fragen zur Software? Lass uns dir helfen. Schicke eine Nachricht mit unserem Kontaktformular an uns.</p>
                 <p class="hint">Alle mit * markierten Felder sind Pflichtfelder.</p>
-                <div id="name-div">
-                    <label id="name-label" for="name">Name*</label>
-                    <br>
-                    <img src="Error.png" alt="Error" id="error-img4" class="error-img" style="display: none;">
-                    <span id="name-error-text"></span>
-                    <input type="text" class="input-field" placeholder="Dein Name" name="name" id="name">
+                <div role="textbox" id="name-div">
+                    <label id="name-label" for="name">Name* <br> <img src="Error.png" alt="Error" id="error-img4" class="error-img" style="display: none;"> <span id="name-error-text"></span></label>
+                    <input aria-required="true" type="text" class="input-field" name="name" id="name">
                 </div>
-                <div id="mail-div">
-                    <label id="mail-label" for="mail">E-Mail Adresse*</label>
-                    <br>
-                    <img src="Error.png" alt="Error" id="error-img1" class="error-img" style="display: none;">
-                    <span id="mail-error-text"></span>
-                    <input role="input" type="email" class="input-field" placeholder="E-Mail Adresse" name="mail" id="mail">
+                <div id="mail-div" role="textbox">
+                    <label id="mail-label" for="mail">E-Mail Adresse* <br><img src="Error.png" alt="Error" id="error-img1" class="error-img" style="display: none;"><span id="mail-error-text"></span></label>
+                    <input aria-required="true" role="input" type="email" class="input-field" name="mail" id="mail">
                 </div>
-                <div id="betreff-div">
-                    <label id="betreff-label" for="betreff">Betreff*</label>
-                    <br>
-                    <img src="Error.png" alt="Error" id="error-img3" class="error-img" style="display: none;">
-                    <span id="betreff-error-text"></span>
-                    <input type="text" class="input-field" placeholder="Betreff" name="betreff" id="betreff">
+                <div id="betreff-div" role="textbox">
+                    <label id="betreff-label" for="betreff">Betreff* <br><img src="Error.png" alt="Error" id="error-img3" class="error-img" style="display: none;"><span id="betreff-error-text"></span></label>
+                    <input aria-required="true" type="text" class="input-field" name="betreff" id="betreff">
                 </div>     
-                <div id="message-div">
-                    <label id="message-label" for="nachricht">Deine Nachricht*</label>
-                    <br>
-                    <img src="Error.png" alt="Error" id="error-img2" class="error-img" style="display: none;">
-                    <span id="message-error-text"></span>
-                    <textarea class="input-field textarea-field" placeholder="Deine Nachricht" name="nachricht" id="nachricht" cols="30" rows="10"></textarea>
+                <div id="message-div" role="textbox" role>
+                    <label id="message-label" for="nachricht">Deine Nachricht* <br><img src="Error.png" alt="Error" id="error-img2" class="error-img" style="display: none;"><span id="message-error-text"></span></label>
+                    <textarea aria-required="true" class="input-field textarea-field" name="nachricht" id="nachricht" cols="30" rows="10"></textarea>
                 </div>
-                <button onclick="validateMail(), validateMessage(), validateBetreff(), validateName()" type="button" class="btn" role="buttonspr" >Nachricht abschicken</button>
+                <button onclick="validateMessage(), validateBetreff(), validateMail(), validateName()" type="button" class="btn" role="buttonspr" >Nachricht abschicken</button>
             </form>
         </div>
     </main>
-    <footer>No rights reserved · turnertech@outlook.com</footer>
+    <footer aria-label="Fußleiste" lang="en">No rights reserved · turnertech@outlook.com</footer>
 
     <script>
         function validateMail()
@@ -66,7 +54,7 @@
             var text = document.getElementById("mail-error-text");
     
                 if(mail.match(regx)){
-                    
+                    return true;
                 }
                 else {
                     document.getElementById("error-img1").style.display = "inline";                 
@@ -76,6 +64,8 @@
                     document.getElementById("mail-div").classList.add("line");
                     document.getElementById("mail").classList.remove("input-filed");
                     document.getElementById("mail").classList.add("invalidform");
+                    document.getElementById("mail").focus();
+                    return false;
                 }
         }
 
@@ -90,6 +80,10 @@
                     document.getElementById("message-div").classList.add("linetextarea");
                     document.getElementById("nachricht").classList.remove("textarea-filed");
                     document.getElementById("nachricht").classList.add("invalidtextarea");
+                    document.getElementById("nachricht").focus();
+                    return false;
+            } else {
+                return true;
             }
         }
 
@@ -98,12 +92,16 @@
             var text = document.getElementById("betreff-error-text");
             if(betreff == "" || betreff == null){
                 document.getElementById("error-img3").style.display = "inline";                 
-                    text.innerHTML = "Bitte gib einen Betreff an.";
-                    text.classList.add("invalid");
-                    document.getElementById("betreff-label").classList.add("invalid");
-                    document.getElementById("betreff-div").classList.add("line");
-                    document.getElementById("betreff").classList.remove("input-filed");
-                    document.getElementById("betreff").classList.add("invalidform");
+                text.innerHTML = "Bitte gib einen Betreff an.";
+                text.classList.add("invalid");
+                document.getElementById("betreff-label").classList.add("invalid");
+                document.getElementById("betreff-div").classList.add("line");
+                document.getElementById("betreff").classList.remove("input-filed");
+                document.getElementById("betreff").classList.add("invalidform");
+                document.getElementById("betreff").focus();
+                return false;
+            } else {
+                return true;
             }
         }
 
@@ -112,12 +110,14 @@
             var text = document.getElementById("name-error-text");
             if(name == "" || name == null){
                 document.getElementById("error-img4").style.display = "inline";                 
-                    text.innerHTML = "Bitte gib deinen Namen an.";
-                    text.classList.add("invalid");
-                    document.getElementById("name-label").classList.add("invalid");
-                    document.getElementById("name-div").classList.add("line");
-                    document.getElementById("name").classList.remove("input-filed");
-                    document.getElementById("name").classList.add("invalidform");
+                text.innerHTML = "Bitte gib deinen Namen an.";
+                text.classList.add("invalid");
+                document.getElementById("name-label").classList.add("invalid");
+                document.getElementById("name-div").classList.add("line");
+                document.getElementById("name").classList.remove("input-filed");
+                document.getElementById("name").classList.add("invalidform");
+                document.getElementById("name").focus();
+                return false;
             }
         }
     </script>
