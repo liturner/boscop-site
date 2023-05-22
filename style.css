@@ -110,7 +110,6 @@ nav ul li .active {
 
 nav img {
     height: 45px;
-    
     transform: translate(0%, 27%);
     top: 50%;
 }
@@ -272,7 +271,7 @@ footer {
 }
 
 @media only screen and (max-width: 1400px) {
-    .normal, h2, .normal-img {
+    .normal, h2, .normal-img, figcaption {
         margin-left: 50px;
         margin-right: 50px;
     }
@@ -280,6 +279,20 @@ footer {
     h1 {
         margin-left: 100px;
         margin-right: 100px;
+    }
+
+    nav ul {
+        float: none;
+        width: 80%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .normal-img {
+        max-width: 89%;
+        height: auto;
     }
 
 }
