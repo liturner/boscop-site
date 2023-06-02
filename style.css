@@ -121,7 +121,7 @@ nav img {
 .error-img {
     height: 15px;
     transform: translate(5%, 12%);
-    margin-left: 5px;
+    margin-left: 15px;
 }
 
 .contact-text {
@@ -157,10 +157,12 @@ label {
     margin-bottom: 10px;
     padding-left: 10px;
     padding-right: 10px;
-    border: 1px solid #E0E0E0;
+    border: 1px solid #919191;
     border-radius: 5px;
     outline: none;
     font: normal normal 300 20px/25px Calibri;
+    
+    
 }
 
 .textarea-field {
@@ -207,7 +209,8 @@ figcaption {
 .invalid {
     color: red;
     font: normal normal 300 16px/25px Calibri;
-    margin-left: 5px;
+    margin-left: 15px;
+    font-weight: bold;
 }
 
 .invalidform {
@@ -216,11 +219,10 @@ figcaption {
     margin-bottom: 10px;
     padding-left: 10px;
     padding-right: 10px;
-    margin-left: 5px;
-    border: 1px solid;
-    border-color: red;
-    border-radius: 5px;
-    outline: none;
+    margin-left: 15px;
+    border-color: transparent;
+    outline: 3px solid red;
+
     font: normal normal 300 20px/25px Calibri;
 }
 
@@ -230,20 +232,20 @@ figcaption {
     margin-bottom: 10px;
     padding-left: 10px;
     padding-right: 10px;
-    margin-left: 5px;
-    border: 1px solid;
-    border-color: red;
-    border-radius: 5px;
-    outline: none;
+    margin-left: 15px;
+    border-color: transparent;
+    outline: 3px solid red;
     font: normal normal 300 20px/25px Calibri;
 }
 
 input:focus {
-    border-color: #000000;
+    border-color: transparent;
+    outline: 3px solid #007ACB;
   }
 
 textarea:focus {
-    border-color: #000000;
+    border-color: transparent;
+    outline: 3px solid #007ACB;
 }
 
 .line {
@@ -251,7 +253,6 @@ textarea:focus {
     height: 112px;
     left: 50%;
     margin-left: -4px;
-    margin-right: 5px;
     margin-bottom: 10px;
     top: 60px;
 }
