@@ -39,19 +39,23 @@ body {
 }
 
 .normal {
-    margin-left: 400px;
-    margin-right: 400px;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 50px;
 }
 
 .normal-img {
-    margin-left: 400px;
-    margin-right: 400px;
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 h1 {
-    margin-left: 600px;
-    margin-right: 600px;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 70px;
     margin-bottom: 30px;
     text-align: center;
@@ -63,8 +67,9 @@ h1 {
 }
 
 h2 {
-    margin-left: 400px;
-    margin-right: 400px;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 15px;
     text-align: left;
     font: normal normal normal 35px/42px Calibri;
@@ -125,6 +130,7 @@ nav img {
 }
 
 .contact-text {
+    width: auto;
     margin-left: 50px;
     margin-right: 50px;
     margin-bottom: 30px;
@@ -138,7 +144,7 @@ nav img {
 
 label {
     text-align: left;
-    font: normal normal normal 16px/24px Calibri;
+    font: normal normal normal 18px/24px Calibri;
     letter-spacing: 0px;
     color: #212529;
     opacity: 1;
@@ -190,10 +196,12 @@ text-align: left;
 }
 
 figcaption {
-    margin-left: 400px;
-    margin-right: 400px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 50px;
     font-size: smaller;
+    display: block;
 }
 
 .hint {
@@ -208,13 +216,13 @@ figcaption {
 
 .invalid {
     color: red;
-    font: normal normal 300 16px/25px Calibri;
+    font: normal normal 300 18px/25px Calibri;
     margin-left: 15px;
     font-weight: bold;
 }
 
 .invalidform {
-    width: 396px;
+    width: 385px;
     height: 40px;
     margin-bottom: 10px;
     padding-left: 10px;
@@ -227,7 +235,7 @@ figcaption {
 }
 
 .invalidtextarea {
-    width: 396px;
+    width: 385px;
     height: 100px;
     margin-bottom: 10px;
     padding-left: 10px;
@@ -276,15 +284,8 @@ footer {
 }
 
 @media only screen and (max-width: 1400px) {
-    .normal, h2, .normal-img, figcaption {
-        margin-left: 50px;
-        margin-right: 50px;
-    }
 
-    h1 {
-        margin-left: 100px;
-        margin-right: 100px;
-    }
+
 
     nav ul {
         float: none;

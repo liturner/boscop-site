@@ -44,7 +44,7 @@
             </form>
         </div>
     </main>
-    <footer aria-label="Fußleiste" lang="en">No rights reserved · <a href="mailto:turnertech@outlook.com" aria-label="E-Mail-Adresse">turnertech@outlook.com</a></footer>
+    <footer aria-label="Fußleiste"><span lang="en">No rights reserved <span aria-hidden="true"> · </span></span><a href="mailto:turnertech@outlook.com">E-Mail: turnertech@outlook.com</a></footer>
 
     <script>
         function validateMail()
@@ -58,7 +58,7 @@
                 }
                 else {
                     document.getElementById("error-img1").style.display = "inline";                 
-                    text.innerHTML = "Ups, etwas stimmt mit deiner E-Mail Adresse nicht.";
+                    text.innerHTML = "Etwas stimmt mit deiner E-Mail Adresse nicht.";
                     text.classList.add("invalid");
                     document.getElementById("mail-label").classList.add("invalid");
                     document.getElementById("mail-div").classList.add("line");
