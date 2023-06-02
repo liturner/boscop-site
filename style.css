@@ -102,6 +102,10 @@ nav li a {
     text-decoration: none;
 }
 
+a {
+    color: white;
+}
+
 nav ul li .active {
     color: #007ACB;
     font-weight: bold;
